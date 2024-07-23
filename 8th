@@ -1,0 +1,17 @@
+To design a cloud-based ETL data pipeline on GCP below would be my picks:
+Extract
+Cloud Storage: To store the CSV files exported from the legacy database. The source payloads will be exported to Cloud Storage as CSV files.
+
+Transform
+Dataflow: We can use Dataflow to read the CSV files from Cloud Storage, perform the necessary transformations (filtering, joining, mapping), and write the transformed data to BigQuery.
+Or we can use dataproc cluster to run spark job and perform necessary transformation.
+
+Load
+BigQuery: The transformed data will be loaded into BigQuery tables for downstream analytics and reporting.
+
+Archive
+Cloud Storage: The raw source data and transformed output data will be archived in Cloud Storage, partitioned by export date.
+This ensures that the data is available for future reference and analysis.
+
+Additional Services
+Cloud composer: We can use composer to orchestrate jobs.

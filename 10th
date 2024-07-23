@@ -1,0 +1,22 @@
+1. Entities and Tables
+    a. Pharmacies - Info of all the pharmacy, id, location, chief manager, owner (if applicable), etc
+    b. Employees - id, name, position, age, salary, leaves, location, address, phone no, email, etc
+    c. Customers - id, name, email, phone no, age, health issues, customer points, etc
+    d. Drugs - Info on Drug, id, code, manufacture, price, price eff and exp date, etc
+    e. Drug quantity - Contains info on how much drugs is available per pharmacy, etc
+    f. Prescriptions - rx_id, patient_name, doctor name, drugs id, eating duration, etc
+    g. Coupon - We can have a couple table, which will contain coupon id, discount logic, etc
+    h. Transaction - This will be a fact table containing, id of customer, id of employee, id of store, if of drug,
+    amt charged, date, coupon availed, mode of payment, etc
+
+2. Data Structures and Types
+Data Types:
+Will use appropriate data types for each column (ex - INT for IDs, VARCHAR for names and addresses, DECIMAL for prices).
+Data Structures:
+Normalize the database to reduce redundancy (basically separate tables for pharmacies, employees, customers, medications, prescriptions, and Transaction).
+
+3. Constraints
+Primary Keys: Ensure each table has a unique identifier.
+Foreign Keys: Implement foreign key constraints to maintain referential integrity between related tables (ex - linking customers and Prescriptions).
+Unique Constraints: Ensure unique values where applicable (e.g., email addresses or phone no in Customers and Employees).
+Checks: Implement checks for data validation (e.g., ensuring stock_quantity is non-negative).
